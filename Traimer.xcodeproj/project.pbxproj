@@ -15,6 +15,7 @@
 		7A89E5F120932E1C00B72E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A89E5EF20932E1C00B72E7F /* LaunchScreen.storyboard */; };
 		7A89E5FC20932E1D00B72E7F /* TraimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E5FB20932E1D00B72E7F /* TraimerTests.swift */; };
 		7A89E60720932E1D00B72E7F /* TraimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E60620932E1D00B72E7F /* TraimerUITests.swift */; };
+		7A89E61C209393B400B72E7F /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E61B209393B400B72E7F /* Dot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7A89E60220932E1D00B72E7F /* TraimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89E60620932E1D00B72E7F /* TraimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraimerUITests.swift; sourceTree = "<group>"; };
 		7A89E60820932E1D00B72E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A89E61B209393B400B72E7F /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		7A89E61420932E4600B72E7F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A89E61B209393B400B72E7F /* Dot.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				7A89E5E620932E1C00B72E7F /* TimerVC.swift in Sources */,
 				7A89E5EC20932E1C00B72E7F /* Traimer.xcdatamodeld in Sources */,
 				7A89E5E420932E1C00B72E7F /* AppDelegate.swift in Sources */,
+				7A89E61C209393B400B72E7F /* Dot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
