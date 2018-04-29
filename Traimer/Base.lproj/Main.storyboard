@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7q-F5-gQQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7q-F5-gQQ" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
                                 <rect key="frame" x="256" y="318" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
@@ -27,42 +27,148 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-Bl-hwM">
-                                <rect key="frame" x="110" y="205" width="54" height="66"/>
+                                <rect key="frame" x="126" y="376" width="54" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
                                 <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-oa-pIF">
-                                <rect key="frame" x="179" y="205" width="54" height="66"/>
+                                <rect key="frame" x="195" y="376" width="54" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
                                 <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bu-mi-GIU">
-                                <rect key="frame" x="83" y="318" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bu-mi-GIU" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
+                                <rect key="frame" x="83" y="302" width="74" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIZ-nw-4zY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-cT-wM5">
-                                <rect key="frame" x="164" y="205" width="14" height="66"/>
+                                <rect key="frame" x="180" y="376" width="14" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
                                 <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s5p-Zy-19c">
+                                <rect key="frame" x="67" y="64" width="240" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-DJ-4BY" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="109" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aha-xk-gxS" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="149" y="8" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Qy-2ax" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="28" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-tI-Onx" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="198" y="59" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-Mt-IgF" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="209" y="101" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fib-2B-R7F" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="109" y="194" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGw-1n-mM3" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="101" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-co-Lug" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="198" y="132" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-34-bUJ" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="163" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZX-LK-Jg4" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="149" y="186" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eX8-AD-jMn" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="78" y="186" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJp-Nm-aIB" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="163" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsN-k6-ALm" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="132" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APk-nq-TA5" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="70" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJ3-nl-DzC" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="34" y="39" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-Kf-vg2" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="8" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ATl-np-qsi"/>
                     <connections>
+                        <outlet property="clockFace" destination="s5p-Zy-19c" id="gZ0-q5-qm6"/>
+                        <outlet property="dot1" destination="ULJ-DJ-4BY" id="G9M-3z-2vP"/>
+                        <outlet property="dot10" destination="eX8-AD-jMn" id="cUa-lg-Lwo"/>
+                        <outlet property="dot11" destination="eJp-Nm-aIB" id="zjB-lU-2EA"/>
+                        <outlet property="dot12" destination="IsN-k6-ALm" id="KZo-of-wuN"/>
+                        <outlet property="dot13" destination="aGw-1n-mM3" id="6b8-b2-h3h"/>
+                        <outlet property="dot14" destination="APk-nq-TA5" id="kQz-Yi-JUz"/>
+                        <outlet property="dot15" destination="GJ3-nl-DzC" id="NJR-tf-mlo"/>
+                        <outlet property="dot16" destination="AlH-Kf-vg2" id="4Zg-NN-mup"/>
+                        <outlet property="dot2" destination="aha-xk-gxS" id="y5r-lh-JZk"/>
+                        <outlet property="dot3" destination="blR-Qy-2ax" id="VFU-Ip-6a5"/>
+                        <outlet property="dot4" destination="Qh1-tI-Onx" id="yk2-NA-2j9"/>
+                        <outlet property="dot5" destination="6fq-Mt-IgF" id="iST-zv-8CW"/>
+                        <outlet property="dot6" destination="jnq-co-Lug" id="gLg-me-w7m"/>
+                        <outlet property="dot7" destination="gIG-34-bUJ" id="4AB-gx-Aib"/>
+                        <outlet property="dot8" destination="CZX-LK-Jg4" id="d3n-wN-hoF"/>
+                        <outlet property="dot9" destination="Fib-2B-R7F" id="waS-AS-kE0"/>
                         <outlet property="minuteLbl" destination="2Zo-Bl-hwM" id="fDR-34-GRh"/>
                         <outlet property="secondLbl" destination="uEW-oa-pIF" id="GDc-eI-8xi"/>
+                        <outlet property="stopBtn" destination="9Bu-mi-GIU" id="32y-u6-5Dn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

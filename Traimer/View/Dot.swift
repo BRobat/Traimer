@@ -2,30 +2,28 @@
 //  Dot.swift
 //  Traimer
 //
-//  Created by Tohil on 27/04/2018.
+//  Created by Tohil on 29/04/2018.
 //  Copyright © 2018 Robat. All rights reserved.
 //
 
 import UIKit
 
 class Dot: UIView {
-    
-    var isActive: Bool = false
 
     override func awakeFromNib() {
-        self.awakeFromNib()
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = 12
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func setDotColorBlue() {
+        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func setDotColorRed() {
+        self.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
     }
     
+    func clearDot() {
+        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.1)
+    }
     
-    
-
 }

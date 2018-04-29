@@ -15,7 +15,10 @@
 		7A89E5F120932E1C00B72E7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A89E5EF20932E1C00B72E7F /* LaunchScreen.storyboard */; };
 		7A89E5FC20932E1D00B72E7F /* TraimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E5FB20932E1D00B72E7F /* TraimerTests.swift */; };
 		7A89E60720932E1D00B72E7F /* TraimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E60620932E1D00B72E7F /* TraimerUITests.swift */; };
-		7A89E61C209393B400B72E7F /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E61B209393B400B72E7F /* Dot.swift */; };
+		7A93B36F2095574100EB2CEA /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B36E2095574100EB2CEA /* GlobalValues.swift */; };
+		7A93B37120955BA800EB2CEA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B37020955BA800EB2CEA /* RoundedButton.swift */; };
+		7A93B37320955C4400EB2CEA /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B37220955C4400EB2CEA /* RoundedLabel.swift */; };
+		7A93B3752095622B00EB2CEA /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B3742095622B00EB2CEA /* Dot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,10 @@
 		7A89E60220932E1D00B72E7F /* TraimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89E60620932E1D00B72E7F /* TraimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraimerUITests.swift; sourceTree = "<group>"; };
 		7A89E60820932E1D00B72E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A89E61B209393B400B72E7F /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		7A93B36E2095574100EB2CEA /* GlobalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
+		7A93B37020955BA800EB2CEA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		7A93B37220955C4400EB2CEA /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
+		7A93B3742095622B00EB2CEA /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,7 @@
 		7A89E5E220932E1C00B72E7F /* Traimer */ = {
 			isa = PBXGroup;
 			children = (
-				7A89E61620932E5200B72E7F /* Model */,
+				7A89E61620932E5200B72E7F /* Services */,
 				7A89E61520932E4D00B72E7F /* Controller */,
 				7A89E61420932E4600B72E7F /* View */,
 				7A89E5E320932E1C00B72E7F /* AppDelegate.swift */,
@@ -135,7 +141,9 @@
 		7A89E61420932E4600B72E7F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7A89E61B209393B400B72E7F /* Dot.swift */,
+				7A93B37020955BA800EB2CEA /* RoundedButton.swift */,
+				7A93B37220955C4400EB2CEA /* RoundedLabel.swift */,
+				7A93B3742095622B00EB2CEA /* Dot.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,11 +156,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		7A89E61620932E5200B72E7F /* Model */ = {
+		7A89E61620932E5200B72E7F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7A93B36E2095574100EB2CEA /* GlobalValues.swift */,
 			);
-			path = Model;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +296,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A89E5E620932E1C00B72E7F /* TimerVC.swift in Sources */,
+				7A93B37120955BA800EB2CEA /* RoundedButton.swift in Sources */,
+				7A93B37320955C4400EB2CEA /* RoundedLabel.swift in Sources */,
+				7A93B3752095622B00EB2CEA /* Dot.swift in Sources */,
 				7A89E5EC20932E1C00B72E7F /* Traimer.xcdatamodeld in Sources */,
 				7A89E5E420932E1C00B72E7F /* AppDelegate.swift in Sources */,
-				7A89E61C209393B400B72E7F /* Dot.swift in Sources */,
+				7A93B36F2095574100EB2CEA /* GlobalValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
