@@ -27,6 +27,7 @@ class TimerVC: UIViewController {
     @IBOutlet weak var secondLbl: UILabel!
     
     @IBOutlet weak var stopBtn: RoundedButton!
+    @IBOutlet weak var startBtn: RoundedButton!
     
     @IBOutlet weak var clockFace: UIView!
     
@@ -46,8 +47,6 @@ class TimerVC: UIViewController {
     @IBOutlet weak var dot14: Dot!
     @IBOutlet weak var dot15: Dot!
     @IBOutlet weak var dot16: Dot!
-    
-    
     
     
     override func viewDidLoad() {
@@ -130,65 +129,25 @@ class TimerVC: UIViewController {
         let timePerDot = Double(fullSequenceTime)/Double(numberOfDots)
         print("clockFaceTime:",clockFaceTime,"timePerDot:",timePerDot,"fullSequenceTime:",fullSequenceTime)
         let dots = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15, dot16]
+        var iteration = 0
         
         if clockFaceTime >= 1 {
-            
             for dot in dots {
                 dot?.setDotColorBlue()
             }
         }
         
-       
-            if clockFaceTime >= timePerDot {
-                dot1.clearDot()
+        for dot in dots {
+            if iteration <= dots.count{
+                iteration += 1
+                if clockFaceTime >= timePerDot*Double(iteration) {
+                    dot?.clearDot()
+                }
+            } else {
+                iteration = 0
             }
+        }
         
-        
-        if clockFaceTime >= timePerDot*2 {
-            dot2.clearDot()
-        }
-        if clockFaceTime >= timePerDot*3 {
-            dot3.clearDot()
-        }
-        if clockFaceTime >= timePerDot*4 {
-            dot4.clearDot()
-        }
-        if clockFaceTime >= timePerDot*5 {
-            dot5.clearDot()
-        }
-        if clockFaceTime >= timePerDot*6 {
-            dot6.clearDot()
-        }
-        if clockFaceTime >= timePerDot*7 {
-            dot7.clearDot()
-        }
-        if clockFaceTime >= timePerDot*8 {
-            dot8.clearDot()
-        }
-        if clockFaceTime >= timePerDot*9 {
-            dot9.clearDot()
-        }
-        if clockFaceTime >= timePerDot*10 {
-            dot10.clearDot()
-        }
-        if clockFaceTime >= timePerDot*11 {
-            dot11.clearDot()
-        }
-        if clockFaceTime >= timePerDot*12 {
-            dot12.clearDot()
-        }
-        if clockFaceTime >= timePerDot*13 {
-            dot13.clearDot()
-        }
-        if clockFaceTime >= timePerDot*14 {
-            dot14.clearDot()
-        }
-        if clockFaceTime >= timePerDot*15 {
-            dot15.clearDot()
-        }
-        if clockFaceTime >= timePerDot*16 {
-            dot16.clearDot()
-        }
     }
     
     
