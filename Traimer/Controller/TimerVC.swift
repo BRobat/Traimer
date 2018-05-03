@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SpriteKit
+import AVFoundation
 
 
 
@@ -19,6 +19,7 @@ class TimerVC: UIViewController {
     var time = 0.0
     var timer = Timer()
     var interval = 1.0
+    var audioNode: AVAudioPlayer?
     
     var timerIsValid = false
     
@@ -58,6 +59,7 @@ class TimerVC: UIViewController {
     
     @objc func action() {
         updateDots()
+        playSounds()
         if timerIsValid {
             time += interval
             updateMinutesLbl()
@@ -102,7 +104,14 @@ class TimerVC: UIViewController {
     }
     
     func updateMinutesLbl() {
-        minuteLbl.text! = String(Int(time / 60))
+        let minute = Int(time/60)
+        
+        if minute < 10 {
+            minuteLbl.text! = "0"+String(minute)
+        } else {
+            minuteLbl.text! = String(minute)
+        }
+        
     }
     
     
@@ -118,9 +127,9 @@ class TimerVC: UIViewController {
     
     func setStopBtnLbl() {
         if timerIsValid == true {
-            stopBtn.setTitle("stop", for: .normal)
+            stopBtn.setTitle("Stop", for: .normal)
         } else {
-            stopBtn.setTitle("reset", for: .normal)
+            stopBtn.setTitle("Reset", for: .normal)
         }
     }
     
@@ -147,7 +156,30 @@ class TimerVC: UIViewController {
                 iteration = 0
             }
         }
+    }
+    
+    func playSounds() {
+        if Int(time) % fullSequenceTime == fullSequenceTime-1 {
+            let path = Bundle.main.path(forResource: "C.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioNode = try AVAudioPlayer(contentsOf: url)
+                audioNode?.prepareToPlay()
+                audioNode?.play()
+                print("playing Cdur")
+            } catch {return}
+        }
         
+        if Int(time) % fullSequenceTime == GlobalValues.breakTime-1 {
+            let path = Bundle.main.path(forResource: "Cdur.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioNode = try AVAudioPlayer(contentsOf: url)
+                audioNode?.prepareToPlay()
+                audioNode?.play()
+                print("playing C")
+            } catch {return}
+        }
     }
     
     

@@ -11,11 +11,12 @@ import UIKit
 class Dot: UIView {
 
     override func awakeFromNib() {
-        self.layer.cornerRadius = 12
+        self.layer.cornerRadius = 6
     }
     
     func setDotColorBlue() {
-        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+        // rgb: 39 44 117
+        self.backgroundColor = UIColor(red: 39/255, green: 44/255, blue: 117/255, alpha: 1.0)
     }
     
     func setDotColorRed() {

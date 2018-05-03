@@ -11,6 +11,6 @@ import UIKit
 class RoundedLabel: UILabel {
 
     override func awakeFromNib() {
-        self.layer.cornerRadius = 12
+        self.layer.cornerRadius = 6
     }
 }

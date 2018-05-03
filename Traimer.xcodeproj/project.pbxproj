@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2DB477209B1BAE00D01DD2 /* Cdur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A2DB475209B1BAD00D01DD2 /* Cdur.mp3 */; };
+		7A2DB478209B1BAE00D01DD2 /* C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A2DB476209B1BAD00D01DD2 /* C.mp3 */; };
+		7A2DB47B209B805A00D01DD2 /* BorderedTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2DB47A209B805A00D01DD2 /* BorderedTabbar.swift */; };
 		7A89E5E420932E1C00B72E7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E5E320932E1C00B72E7F /* AppDelegate.swift */; };
 		7A89E5E620932E1C00B72E7F /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A89E5E520932E1C00B72E7F /* TimerVC.swift */; };
 		7A89E5E920932E1C00B72E7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A89E5E720932E1C00B72E7F /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A2DB475209B1BAD00D01DD2 /* Cdur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Cdur.mp3; path = Traimer/Sounds/Cdur.mp3; sourceTree = SOURCE_ROOT; };
+		7A2DB476209B1BAD00D01DD2 /* C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C.mp3; path = Traimer/Sounds/C.mp3; sourceTree = SOURCE_ROOT; };
+		7A2DB47A209B805A00D01DD2 /* BorderedTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTabbar.swift; sourceTree = "<group>"; };
 		7A89E5E020932E1C00B72E7F /* Traimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89E5E320932E1C00B72E7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A89E5E520932E1C00B72E7F /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
@@ -84,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A2DB479209B1BB400D01DD2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7A2DB476209B1BAD00D01DD2 /* C.mp3 */,
+				7A2DB475209B1BAD00D01DD2 /* Cdur.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		7A89E5D720932E1B00B72E7F = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +122,7 @@
 		7A89E5E220932E1C00B72E7F /* Traimer */ = {
 			isa = PBXGroup;
 			children = (
+				7A2DB479209B1BB400D01DD2 /* Sounds */,
 				7A89E61620932E5200B72E7F /* Services */,
 				7A89E61520932E4D00B72E7F /* Controller */,
 				7A89E61420932E4600B72E7F /* View */,
@@ -144,6 +160,7 @@
 				7A93B37020955BA800EB2CEA /* RoundedButton.swift */,
 				7A93B37220955C4400EB2CEA /* RoundedLabel.swift */,
 				7A93B3742095622B00EB2CEA /* Dot.swift */,
+				7A2DB47A209B805A00D01DD2 /* BorderedTabbar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,8 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2DB477209B1BAE00D01DD2 /* Cdur.mp3 in Resources */,
 				7A89E5F120932E1C00B72E7F /* LaunchScreen.storyboard in Resources */,
 				7A89E5EE20932E1C00B72E7F /* Assets.xcassets in Resources */,
+				7A2DB478209B1BAE00D01DD2 /* C.mp3 in Resources */,
 				7A89E5E920932E1C00B72E7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +316,7 @@
 			files = (
 				7A89E5E620932E1C00B72E7F /* TimerVC.swift in Sources */,
 				7A93B37120955BA800EB2CEA /* RoundedButton.swift in Sources */,
+				7A2DB47B209B805A00D01DD2 /* BorderedTabbar.swift in Sources */,
 				7A93B37320955C4400EB2CEA /* RoundedLabel.swift in Sources */,
 				7A93B3752095622B00EB2CEA /* Dot.swift in Sources */,
 				7A89E5EC20932E1C00B72E7F /* Traimer.xcdatamodeld in Sources */,

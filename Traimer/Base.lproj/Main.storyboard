@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGE-4D-Io3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7SB-sy-g3P">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TimerVC-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="Pju-Ch-Bol">
+            <objects>
+                <tabBarController id="7SB-sy-g3P" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f2k-a8-aMn" customClass="BorderedTabbar" customModule="Traimer" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wkO-Wg-v2j"/>
+                        <segue destination="XXk-Px-XrZ" kind="relationship" relationship="viewControllers" id="MWR-Qe-E2O"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1cn-fv-2wQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-467" y="817"/>
+        </scene>
+        <!--Clock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimerVC" customModule="Traimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,137 +37,240 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bu-mi-GIU" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="349" width="74" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Stop"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bu-mi-GIU" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="368" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1C3-Oz-l2o"/>
+                                    <constraint firstAttribute="width" constant="80" id="xuw-hP-g6N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="stopBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIZ-nw-4zY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s5p-Zy-19c">
-                                <rect key="frame" x="10" y="64" width="299" height="280"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5p-Zy-19c">
+                                <rect key="frame" x="19.5" y="40" width="280" height="280"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="zDD-UT-7Lq">
-                                        <rect key="frame" x="0.0" y="0.0" width="296" height="280"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-cT-wM5">
+                                        <rect key="frame" x="131.5" y="102" width="16" height="76.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="56"/>
+                                        <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="zDD-UT-7Lq">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-DJ-4BY" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="109" y="0.0" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-DJ-4BY" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="14" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="BG0-vd-HVp"/>
+                                            <constraint firstAttribute="width" constant="12" id="IQq-S3-1wM"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aha-xk-gxS" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="149" y="8" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aha-xk-gxS" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="179" y="24" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="Tu0-fR-VYq"/>
+                                            <constraint firstAttribute="height" constant="12" id="Yfe-No-0vn"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Qy-2ax" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="28" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Qy-2ax" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="219" y="49" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="Zlz-Pv-5zr"/>
+                                            <constraint firstAttribute="height" constant="12" id="fhL-8L-Oao"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-tI-Onx" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="198" y="59" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-tI-Onx" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="244" y="89" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="G8Y-Hu-OO6"/>
+                                            <constraint firstAttribute="height" constant="12" id="onN-yg-c5b"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-Mt-IgF" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="209" y="101" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-Mt-IgF" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="254" y="134" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="0If-N0-mJQ"/>
+                                            <constraint firstAttribute="width" constant="12" id="nEC-CE-aRc"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fib-2B-R7F" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="109" y="194" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fib-2B-R7F" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="254" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="BeF-sP-TgZ"/>
+                                            <constraint firstAttribute="width" constant="12" id="D02-UL-1xP"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGw-1n-mM3" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="101" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGw-1n-mM3" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="134" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="AmX-RT-Zge"/>
+                                            <constraint firstAttribute="width" constant="12" id="Roe-jy-AQC"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-co-Lug" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="198" y="132" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-co-Lug" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="244" y="179" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="YE0-fo-Mpw"/>
+                                            <constraint firstAttribute="width" constant="12" id="pzB-R6-mQe"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-34-bUJ" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="163" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-34-bUJ" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="219" y="219" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="1Nk-Je-F3o"/>
+                                            <constraint firstAttribute="width" constant="12" id="Tro-S9-Pmt"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZX-LK-Jg4" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="149" y="186" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZX-LK-Jg4" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="179" y="244" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="4xK-WM-fo6"/>
+                                            <constraint firstAttribute="height" constant="12" id="708-wN-EXG"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eX8-AD-jMn" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="78" y="186" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX8-AD-jMn" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="89" y="244" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="bzs-St-DlO"/>
+                                            <constraint firstAttribute="width" constant="12" id="dvI-vd-5GF"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJp-Nm-aIB" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="163" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJp-Nm-aIB" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="49" y="219" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="R12-K3-3Zk"/>
+                                            <constraint firstAttribute="width" constant="12" id="d44-8Y-O7j"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsN-k6-ALm" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="132" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsN-k6-ALm" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="179" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="A6E-nf-Iul"/>
+                                            <constraint firstAttribute="height" constant="12" id="YOj-Kc-5Zr"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APk-nq-TA5" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="70" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APk-nq-TA5" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="89" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="FRF-Ja-XyJ"/>
+                                            <constraint firstAttribute="height" constant="12" id="gHS-zB-SJ2"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJ3-nl-DzC" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="34" y="39" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ3-nl-DzC" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="49" y="49" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="0gV-6e-Ahy"/>
+                                            <constraint firstAttribute="height" constant="12" id="NQF-NZ-ipQ"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-Kf-vg2" customClass="Dot" customModule="Traimer" customModuleProvider="target">
-                                        <rect key="frame" x="65" y="8" width="12" height="12"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-Kf-vg2" customClass="Dot" customModule="Traimer" customModuleProvider="target">
+                                        <rect key="frame" x="89" y="24" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="aH6-Ed-wMN"/>
+                                            <constraint firstAttribute="width" constant="12" id="uYK-rx-qgR"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-Bl-hwM">
-                                        <rect key="frame" x="59" y="79" width="54" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-oa-pIF">
+                                        <rect key="frame" x="145" y="107" width="66" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="RWT-Ix-h5c"/>
+                                            <constraint firstAttribute="height" constant="66" id="zcJ-uC-Nsd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="56"/>
                                         <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-oa-pIF">
-                                        <rect key="frame" x="128" y="79" width="54" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
-                                        <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjk-cT-wM5">
-                                        <rect key="frame" x="113" y="79" width="14" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-Bl-hwM">
+                                        <rect key="frame" x="69" y="107" width="66" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="5PW-kT-CYj"/>
+                                            <constraint firstAttribute="height" constant="66" id="5XI-sx-Ntg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="56"/>
                                         <color key="textColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.42277018230000002" green="0.43880208329999998" blue="0.4287109375" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="1Dc-1X-yPL"/>
+                                    <constraint firstItem="IsN-k6-ALm" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="45" id="22c-PG-LE9"/>
+                                    <constraint firstItem="uEW-oa-pIF" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="38" id="2h3-Ve-nKv"/>
+                                    <constraint firstItem="blR-Qy-2ax" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="85" id="2kd-8y-PDn"/>
+                                    <constraint firstItem="CZX-LK-Jg4" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="45" id="5d4-jV-D8r"/>
+                                    <constraint firstItem="Fib-2B-R7F" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="120" id="6sy-1g-ofY"/>
+                                    <constraint firstItem="aha-xk-gxS" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-110" id="7gB-Ay-YZ7"/>
+                                    <constraint firstItem="jnq-co-Lug" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="110" id="9F0-a1-8mR"/>
+                                    <constraint firstItem="aGw-1n-mM3" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" id="B3X-Ty-lpN"/>
+                                    <constraint firstItem="GJ3-nl-DzC" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-85" id="BDq-DC-fsp"/>
+                                    <constraint firstItem="aGw-1n-mM3" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-120" id="Byc-lc-hBM"/>
+                                    <constraint firstItem="2Zo-Bl-hwM" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-38" id="DZ4-mO-H4e"/>
                                     <constraint firstItem="zDD-UT-7Lq" firstAttribute="top" secondItem="s5p-Zy-19c" secondAttribute="top" id="E3T-CR-LWs"/>
+                                    <constraint firstItem="Qh1-tI-Onx" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="110" id="FfG-NK-QtS"/>
+                                    <constraint firstItem="xjk-cT-wM5" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" id="Gxn-hr-ymI"/>
+                                    <constraint firstItem="APk-nq-TA5" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-45" id="HgG-HK-Crg"/>
+                                    <constraint firstItem="uEW-oa-pIF" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" id="IHL-Ps-rlE"/>
+                                    <constraint firstItem="eX8-AD-jMn" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-45" id="IlP-0B-qvC"/>
+                                    <constraint firstItem="GJ3-nl-DzC" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-85" id="ItI-wS-dh1"/>
+                                    <constraint firstItem="6fq-Mt-IgF" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" id="ML5-Ko-pN0"/>
+                                    <constraint firstItem="eJp-Nm-aIB" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="85" id="OMg-BO-nN0"/>
+                                    <constraint firstItem="xjk-cT-wM5" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" id="U1O-vQ-tT7"/>
+                                    <constraint firstItem="gIG-34-bUJ" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="85" id="UDd-ap-MnY"/>
+                                    <constraint firstItem="aha-xk-gxS" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="45" id="UhP-p0-mvx"/>
+                                    <constraint firstItem="ULJ-DJ-4BY" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-120" id="Utf-ju-RNj"/>
+                                    <constraint firstItem="AlH-Kf-vg2" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-110" id="VDg-YT-2YY"/>
+                                    <constraint firstItem="IsN-k6-ALm" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-110" id="Wih-DG-NWy"/>
+                                    <constraint firstItem="CZX-LK-Jg4" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="110" id="WkC-5n-mEt"/>
+                                    <constraint firstItem="Qh1-tI-Onx" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-45" id="XMw-DY-s7n"/>
+                                    <constraint firstItem="2Zo-Bl-hwM" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" id="Xht-7Y-imz"/>
+                                    <constraint firstItem="gIG-34-bUJ" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="85" id="Xhv-ET-lVM"/>
+                                    <constraint firstItem="eJp-Nm-aIB" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-85" id="aeH-WN-2RT"/>
+                                    <constraint firstItem="AlH-Kf-vg2" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-45" id="aop-Oh-ARR"/>
                                     <constraint firstItem="zDD-UT-7Lq" firstAttribute="leading" secondItem="s5p-Zy-19c" secondAttribute="leading" id="eOK-S4-z8Y"/>
+                                    <constraint firstItem="ULJ-DJ-4BY" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" id="fke-46-ZGX"/>
                                     <constraint firstAttribute="trailing" secondItem="zDD-UT-7Lq" secondAttribute="trailing" id="i1T-2D-Kre"/>
+                                    <constraint firstItem="jnq-co-Lug" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="45" id="iKy-9o-cek"/>
+                                    <constraint firstItem="Fib-2B-R7F" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" id="ixB-nZ-wV7"/>
+                                    <constraint firstItem="APk-nq-TA5" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="-110" id="lfe-4G-TyL"/>
+                                    <constraint firstItem="6fq-Mt-IgF" firstAttribute="centerX" secondItem="s5p-Zy-19c" secondAttribute="centerX" constant="120" id="lxj-c4-Cfa"/>
+                                    <constraint firstItem="blR-Qy-2ax" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="-85" id="oYK-uq-g1w"/>
+                                    <constraint firstAttribute="width" constant="280" id="uXc-9y-LXm"/>
                                     <constraint firstAttribute="bottom" secondItem="zDD-UT-7Lq" secondAttribute="bottom" id="w97-rC-nUd"/>
+                                    <constraint firstItem="eX8-AD-jMn" firstAttribute="centerY" secondItem="s5p-Zy-19c" secondAttribute="centerY" constant="110" id="zyp-4A-7WE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7q-F5-gQQ" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
-                                <rect key="frame" x="211" y="366" width="70" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Start"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7q-F5-gQQ" customClass="RoundedButton" customModule="Traimer" customModuleProvider="target">
+                                <rect key="frame" x="224" y="368" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0Xm-cg-Jo6"/>
+                                    <constraint firstAttribute="width" constant="80" id="soF-ar-4Gb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.15429249410000001" green="0.17059114580000001" blue="0.45823544259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5lF-lU-8dd"/>
                                 </connections>
@@ -156,10 +278,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="s5p-Zy-19c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rB4-MW-HNo"/>
+                            <constraint firstItem="9Bu-mi-GIU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-104" id="2VP-Iy-AQy"/>
+                            <constraint firstItem="s5p-Zy-19c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RGS-dO-Ta3"/>
+                            <constraint firstItem="N7q-F5-gQQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="104" id="cG9-Yo-mkD"/>
+                            <constraint firstItem="9Bu-mi-GIU" firstAttribute="top" secondItem="s5p-Zy-19c" secondAttribute="bottom" constant="48" id="juC-x2-mUe"/>
+                            <constraint firstItem="s5p-Zy-19c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="rB4-MW-HNo"/>
+                            <constraint firstItem="N7q-F5-gQQ" firstAttribute="top" secondItem="s5p-Zy-19c" secondAttribute="bottom" constant="48" id="rI7-U2-bQa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Clock" image="circle" landscapeImage="circle" largeContentSizeImage="circle" selectedImage="circle" id="P6f-8g-cDd">
+                        <color key="badgeColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="ATl-np-qsi"/>
                     <connections>
                         <outlet property="clockFace" destination="s5p-Zy-19c" id="gZ0-q5-qm6"/>
@@ -189,21 +319,23 @@
             </objects>
             <point key="canvasLocation" x="592.5" y="357.04225352112678"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5Rx-vY-4Bd">
+        <!--View Controller-->
+        <scene sceneID="o2A-gM-M9P">
             <objects>
-                <navigationController id="pGE-4D-Io3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v2r-0U-MqG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AFn-Z8-Pbf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QZQ-rM-dha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="XXk-Px-XrZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Snp-91-clN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="N8N-o7-x0P"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="7xU-ig-Re5">
+                        <color key="badgeColor" red="1" green="0.96933728460000002" blue="0.92314350609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-jo-zwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="359"/>
+            <point key="canvasLocation" x="593" y="1158"/>
         </scene>
     </scenes>
     <resources>
