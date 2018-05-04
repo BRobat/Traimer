@@ -13,7 +13,10 @@ import AVFoundation
 
 class TimerVC: UIViewController {
 
-    let fullSequenceTime = GlobalValues.sequenceTime + GlobalValues.breakTime
+    var breakTime = GlobalValues.breakTime
+    var sequenceTime = GlobalValues.sequenceTime
+    var fullSequenceTime = GlobalValues.breakTime +  GlobalValues.sequenceTime
+    
     let numberOfDots = 16
     
     var time = 0.0
@@ -26,6 +29,10 @@ class TimerVC: UIViewController {
     
     @IBOutlet weak var minuteLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
+    
+    @IBOutlet weak var excLbl: UILabel!
+    @IBOutlet weak var breakLbl: UILabel!
+    @IBOutlet weak var seriesLbl: UILabel!
     
     @IBOutlet weak var stopBtn: RoundedButton!
     @IBOutlet weak var startBtn: RoundedButton!
@@ -52,23 +59,25 @@ class TimerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(TimerVC.action),userInfo: self, repeats: true)
+        loadData()
         
-
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(TimerVC.action),userInfo: self, repeats: true)
     }
     
     @objc func action() {
-        updateDots()
-        playSounds()
+        
+        updateLbls()
+        updateSequenceTime()
         if timerIsValid {
             time += interval
             updateMinutesLbl()
             updateSecondLbl()
+            updateDots()
+            playSounds()
+            
         } else {
             
         }
-        
-        
     }
     
     // actions
@@ -76,17 +85,21 @@ class TimerVC: UIViewController {
     @IBAction func startBtnPressed(_ sender: RoundedButton) {
         validateTimer()
         setStopBtnLbl()
+        updateDots()
     }
     
     @IBAction func stopBtnPressed(_ sender: RoundedButton) {
+        updateDots()
         if timerIsValid {
             invalidateTimer()
             setStopBtnLbl()
+            updateDots()
         } else if time != 0.0{
             time = 0.0
             updateMinutesLbl()
             updateSecondLbl()
             setStopBtnLbl()
+            updateDots()
         } else {
             
         }
@@ -111,7 +124,6 @@ class TimerVC: UIViewController {
         } else {
             minuteLbl.text! = String(minute)
         }
-        
     }
     
     
@@ -160,7 +172,7 @@ class TimerVC: UIViewController {
     
     func playSounds() {
         if Int(time) % fullSequenceTime == fullSequenceTime-1 {
-            let path = Bundle.main.path(forResource: "C.mp3", ofType:nil)!
+            let path = Bundle.main.path(forResource: "Amin.mp3", ofType:nil)!
             let url = URL(fileURLWithPath: path)
             do {
                 audioNode = try AVAudioPlayer(contentsOf: url)
@@ -170,7 +182,7 @@ class TimerVC: UIViewController {
             } catch {return}
         }
         
-        if Int(time) % fullSequenceTime == GlobalValues.breakTime-1 {
+        if Int(time) % fullSequenceTime == GlobalValues.breakTime {
             let path = Bundle.main.path(forResource: "Cdur.mp3", ofType:nil)!
             let url = URL(fileURLWithPath: path)
             do {
@@ -180,6 +192,33 @@ class TimerVC: UIViewController {
                 print("playing C")
             } catch {return}
         }
+        
+        
+    }
+    
+    func loadData() {
+        if let l = UserDefaults.standard.value(forKey: "break") as? String {
+            GlobalValues.breakTime = Int(l)!
+        }
+        if let m = UserDefaults.standard.value(forKey: "excercise") as? String {
+            GlobalValues.sequenceTime = Int(m)!
+        }
+    }
+    
+    func updateSequenceTime() {
+        breakTime = GlobalValues.breakTime
+        sequenceTime = GlobalValues.sequenceTime
+        fullSequenceTime = GlobalValues.breakTime +  GlobalValues.sequenceTime
+    }
+    
+    func updateLbls() {
+        excLbl.text! = String(sequenceTime)
+        breakLbl.text! = String(breakTime)
+        
+        let noSeries = Int(time) / (breakTime + sequenceTime)
+        
+        seriesLbl.text! = String(noSeries)
+        
     }
     
     

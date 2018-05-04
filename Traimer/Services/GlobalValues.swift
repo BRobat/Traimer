@@ -9,6 +9,6 @@
 import Foundation
 
 struct GlobalValues {
-    static var sequenceTime = 30
-    static var breakTime = 30
+    static var sequenceTime = 10
+    static var breakTime = 5
 }
