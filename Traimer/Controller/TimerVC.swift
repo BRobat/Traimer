@@ -12,20 +12,23 @@ import AVFoundation
 
 
 class TimerVC: UIViewController {
+    
+    // variables
 
     var breakTime = GlobalValues.breakTime
     var sequenceTime = GlobalValues.sequenceTime
-    var fullSequenceTime = GlobalValues.breakTime +  GlobalValues.sequenceTime
+    var fullSequenceTime = Double(GlobalValues.breakTime + GlobalValues.sequenceTime)
     
-    let numberOfDots = 16
+    let numberOfDots = 16.0
     
     var time = 0.0
     var timer = Timer()
-    var interval = 1.0
+    var interval = 0.1
     var audioNode: AVAudioPlayer?
     
     var timerIsValid = false
     
+    // outlets
     
     @IBOutlet weak var minuteLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
@@ -60,12 +63,10 @@ class TimerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(TimerVC.action),userInfo: self, repeats: true)
     }
     
     @objc func action() {
-        
         updateLbls()
         updateSequenceTime()
         if timerIsValid {
@@ -146,9 +147,9 @@ class TimerVC: UIViewController {
     }
     
     func updateDots() {
-        let clockFaceTime = Double(Int(time)%fullSequenceTime) + 1
-        let timePerDot = Double(fullSequenceTime)/Double(numberOfDots)
-        print("clockFaceTime:",clockFaceTime,"timePerDot:",timePerDot,"fullSequenceTime:",fullSequenceTime)
+        let clockFaceTime = time.truncatingRemainder(dividingBy: fullSequenceTime)
+        let timePerDot = fullSequenceTime/numberOfDots
+        print("real time:",time,"clockFaceTime:",clockFaceTime,"timePerDot:",timePerDot,"fullSequenceTime:",fullSequenceTime)
         let dots = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15, dot16]
         var iteration = 0
         
@@ -171,25 +172,40 @@ class TimerVC: UIViewController {
     }
     
     func playSounds() {
-        if Int(time) % fullSequenceTime == fullSequenceTime-1 {
+        
+        print("dd",time.truncatingRemainder(dividingBy: fullSequenceTime), Double(GlobalValues.breakTime))
+        
+        
+        if time.truncatingRemainder(dividingBy: fullSequenceTime) <= 0.1 {
             let path = Bundle.main.path(forResource: "Amin.mp3", ofType:nil)!
             let url = URL(fileURLWithPath: path)
             do {
                 audioNode = try AVAudioPlayer(contentsOf: url)
                 audioNode?.prepareToPlay()
                 audioNode?.play()
-                print("playing Cdur")
+                print("playing Amin at time:",time)
             } catch {return}
         }
         
-        if Int(time) % fullSequenceTime == GlobalValues.breakTime {
+        else if time.truncatingRemainder(dividingBy: fullSequenceTime) == Double(GlobalValues.breakTime) {
             let path = Bundle.main.path(forResource: "Cdur.mp3", ofType:nil)!
             let url = URL(fileURLWithPath: path)
             do {
                 audioNode = try AVAudioPlayer(contentsOf: url)
                 audioNode?.prepareToPlay()
                 audioNode?.play()
-                print("playing C")
+                print("playing Cdur at time:",time)
+            } catch {return}
+        }
+        
+        else if time.truncatingRemainder(dividingBy: fullSequenceTime/numberOfDots) <= 0.1 {
+            let path = Bundle.main.path(forResource: "B.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioNode = try AVAudioPlayer(contentsOf: url)
+                audioNode?.prepareToPlay()
+                audioNode?.play()
+                print("playing B for:",time)
             } catch {return}
         }
         
@@ -208,7 +224,7 @@ class TimerVC: UIViewController {
     func updateSequenceTime() {
         breakTime = GlobalValues.breakTime
         sequenceTime = GlobalValues.sequenceTime
-        fullSequenceTime = GlobalValues.breakTime +  GlobalValues.sequenceTime
+        fullSequenceTime = Double(GlobalValues.breakTime + GlobalValues.sequenceTime)
     }
     
     func updateLbls() {
